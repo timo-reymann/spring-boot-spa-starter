@@ -7,9 +7,6 @@ import org.springframework.context.annotation.Import;
  * @author timrey
  * @since 26.04.19
  */
-@Import(value = {
-        SpaStarterConfigurationProperties.class,
-        ConfigurationController.class
-})
+@ComponentScan
 public class SpaStarterAutoConfiguration {
 }

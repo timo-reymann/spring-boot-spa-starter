@@ -10,6 +10,7 @@ import org.springframework.web.servlet.resource.PathResourceResolver;
 import org.springframework.web.servlet.resource.ResourceResolverChain;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -22,31 +23,16 @@ import java.util.List;
 @Slf4j
 public class WebMvConfiguration implements WebMvcConfigurer {
     private final ResourceProperties resourceProperties;
-    private final static String[] ASSET_PATTERNS = {
-            "/**/*.css",
-            "/**/*.html",
-            "/**/*.js",
-            "/**/*.jsx",
-            "/**/*.png",
-            "/**/*.jpg",
-            "/**/*.ico",
-            "/**/*.ttf",
-            "/**/*.woff",
-            "/**/*.woff2",
-            "/**/*.pdf",
-            "/**/*.map"
-    };
 
     public WebMvConfiguration(ResourceProperties resourceProperties) {
         this.resourceProperties = resourceProperties;
     }
 
     @Override
-    public void addResourceHandlers(final ResourceHandlerRegistry registry) {
-        log.info("Registering resource handler for spa ...");
-
-        registry.addResourceHandler(ASSET_PATTERNS)
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/**")
                 .addResourceLocations(resourceProperties.getStaticLocations())
+                .setCachePeriod(0)
                 .resourceChain(resourceProperties.getChain().isCache())
                 .addResolver(new PathResourceResolver() {
                     @Override
