@@ -18,7 +18,7 @@ Simply add it to your dependencies
 <dependency>
     <groupId>com.github.timo-reymann</groupId>
     <artifactId>spring-boot-spa-starter</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
 </dependency>
 ```
 
