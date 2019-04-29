@@ -1,4 +1,4 @@
-package com.github.timo_reymann.spring_boot_spa_starter;
+package com.github.timo_reymann.spring_boot_spa_starter.configuration;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.web.ResourceProperties;
@@ -10,7 +10,6 @@ import org.springframework.web.servlet.resource.PathResourceResolver;
 import org.springframework.web.servlet.resource.ResourceResolverChain;
 
 import javax.servlet.http.HttpServletRequest;
-import java.io.IOException;
 import java.util.List;
 
 /**
@@ -19,30 +18,29 @@ import java.util.List;
  * @author Timo Reymann
  * @since 26.04.19
  */
-@Configuration
+@Configuration("SpaStarterWebMvcConfiguration")
 @Slf4j
-public class WebMvConfiguration implements WebMvcConfigurer {
+public class SpaStarterWebMvcConfiguration implements WebMvcConfigurer {
     private final ResourceProperties resourceProperties;
+    private final SpaStarterConfigurationProperties spaStarterConfigurationProperties;
 
-    public WebMvConfiguration(ResourceProperties resourceProperties) {
+    public SpaStarterWebMvcConfiguration(ResourceProperties resourceProperties,
+                                         SpaStarterConfigurationProperties spaStarterConfigurationProperties) {
         this.resourceProperties = resourceProperties;
+        this.spaStarterConfigurationProperties = spaStarterConfigurationProperties;
     }
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/**")
                 .addResourceLocations(resourceProperties.getStaticLocations())
-                .setCachePeriod(0)
+                .setCachePeriod(spaStarterConfigurationProperties.getCachePeriod())
                 .resourceChain(resourceProperties.getChain().isCache())
                 .addResolver(new PathResourceResolver() {
                     @Override
                     public Resource resolveResource(HttpServletRequest request, String requestPath, List<? extends Resource> locations, ResourceResolverChain chain) {
                         final Resource resource = super.resolveResource(request, requestPath, locations, chain);
-                        if (resource != null) {
-                            return resource;
-                        } else {
-                            return super.resolveResource(request, "/index.html", locations, chain);
-                        }
+                        return resource != null ? resource : super.resolveResource(request, "/index.html", locations, chain);
                     }
                 });
     }

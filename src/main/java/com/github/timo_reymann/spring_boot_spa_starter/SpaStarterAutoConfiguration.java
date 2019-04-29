@@ -4,6 +4,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Import;
 
 /**
+ * Entrypoint for component scan
+ *
  * @author timrey
  * @since 26.04.19
  */

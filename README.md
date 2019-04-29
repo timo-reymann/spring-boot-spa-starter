@@ -26,12 +26,19 @@ The configuration is pretty simple
 
 ```yaml
 frontend:
+  # map for your configuration, keyed by string, the value can be anything jackson can serialize
   configuration:
     userApi: 'https://userapi.gateway.company.com'
     stockApi: 'https://stockapi.gateway.company.com'
     useNewStuff: true
-  # optional
+  
+  # optional, specify the endpoint if you want to override the default
   configuration-endpoint: /configuration 
+  
+  # Cache period for the assets
+  cache-period: 0
 ```
 
-The configuration options are available under the configured endpoint as a json object, thats it.
+The configuration options are available under the configured endpoint as a json object, that's it.
+
+If you want to adjust the location for static files etc. simply use the config props available uner `spring.resources.*`.
