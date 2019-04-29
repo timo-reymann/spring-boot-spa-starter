@@ -1,7 +1,6 @@
 package com.github.timo_reymann.spring_boot_spa_starter;
 
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Import;
 
 /**
  * Entrypoint for component scan

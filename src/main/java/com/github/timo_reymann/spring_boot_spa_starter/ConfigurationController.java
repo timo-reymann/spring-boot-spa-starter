@@ -20,9 +20,7 @@ public class ConfigurationController {
     private final HashMap<String, Object> configuration;
 
     public ConfigurationController(SpaStarterConfigurationProperties spaStarterConfigurationProperties) {
-        HashMap<String, Object> copy = new HashMap<>();
-        copy.putAll(spaStarterConfigurationProperties.getConfiguration());
-        this.configuration = copy;
+        this.configuration = new HashMap<>(spaStarterConfigurationProperties.getConfiguration());
     }
 
     @GetMapping
