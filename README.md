@@ -1,6 +1,9 @@
 spring-boot-spa-starter
 ===
 
+![Build Status](https://travis-ci.org/timo-reymann/spring-boot-spa-starter.svg?branch=master)
+![Maven Central Version](https://maven-badges.herokuapp.com/maven-central/com.github.timo-reymann/spring-boot-spa-starter/badge.svg)
+
 ## What is this?
 Simple, yet powerful starter for powering your single page application with an servlet backend, including an configuration endpoint.
 
@@ -26,7 +29,7 @@ The configuration is pretty simple
 
 ```yaml
 frontend:
-  # map for your configuration, keyed by string, the value can be anything jackson can serialize
+  # map for your configuration, keyed by string, the value is string too
   configuration:
     userApi: 'https://userapi.gateway.company.com'
     stockApi: 'https://stockapi.gateway.company.com'
