@@ -6,6 +6,6 @@ cache:
 jdk:
   - oraclejdk8
   - openjdk8
-  - oraclejdk9
-  - oraclejdk11
+  - openjdk9
+  - openjdk10
 script: mvn test
