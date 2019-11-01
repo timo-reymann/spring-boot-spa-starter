@@ -22,7 +22,7 @@ rm pom.xml.versionsBackup
 mvn clean deploy
 
 # Update README version
-sed -i "s/<version>.*<\/version>/<version>1.3.1<\/version>/g" README.md
+sed -i "s/<version>.*<\/version>/<version>${tag}<\/version>/g" README.md
 
 git stage .
 git commit -m "Release ${tag}"
