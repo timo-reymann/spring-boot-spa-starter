@@ -6,7 +6,7 @@
 
     <groupId>com.github.timo-reymann</groupId>
     <artifactId>spring-boot-spa-starter</artifactId>
-    <version>1.2.2</version>
+    <version>1.3.0</version>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -27,6 +27,36 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
+
+    <scm>
+        <connection>scm:git:https://github.com/timo-reymann/spring-boot-spa-starter.git</connection>
+        <developerConnection>scm:git:https://github.com/timo-reymann/spring-boot-spa-starter.git</developerConnection>
+        <url>https://github.com/timo-reymann/spring-boot-spa-starter/tree/${project.scm.tag}</url>
+        <tag>master</tag>
+    </scm>
+
+    <properties>
+        <!-- General build settings -->
+        <java.version>8</java.version>
+
+        <!-- Build Plugins -->
+        <maven.javadoc-plugin.version>3.1.1</maven.javadoc-plugin.version>
+        <maven.gpg-plugin.version>1.6</maven.gpg-plugin.version>
+        <maven.source-plugin.version>3.1.0</maven.source-plugin.version>
+        <nexus.staging-plugin.version>1.6.8</nexus.staging-plugin.version>
+
+        <!-- Dependency Versions -->
+        <lombok.version>1.18.10</lombok.version>
+    </properties>
+
+    <developers>
+        <developer>
+            <id>timo-reymann</id>
+            <name>Timo Reymann</name>
+            <email>mail@timo-reymann.de</email>
+            <url>https://timo-reymann.de</url>
+        </developer>
+    </developers>
 
     <distributionManagement>
         <snapshotRepository>
@@ -64,11 +94,10 @@
 
     <build>
         <plugins>
-            <!-- Nexus Staging -->
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
                 <artifactId>nexus-staging-maven-plugin</artifactId>
-                <version>1.6.7</version>
+                <version>${nexus.staging-plugin.version}</version>
                 <extensions>true</extensions>
                 <configuration>
                     <serverId>ossrh</serverId>
@@ -76,12 +105,10 @@
                     <autoReleaseAfterClose>true</autoReleaseAfterClose>
                 </configuration>
             </plugin>
-
-            <!-- Maven Source JAR -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
-                <version>2.2.1</version>
+                <version>${maven.source-plugin.version}</version>
                 <executions>
                     <execution>
                         <id>attach-sources</id>
@@ -91,14 +118,11 @@
                     </execution>
                 </executions>
             </plugin>
-
-            <!-- Maven JavaDOC jar -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.9.1</version>
+                <version>${maven.javadoc-plugin.version}</version>
                 <configuration>
-                    <additionalparam>-Xdoclint:none</additionalparam>
                     <source>8</source>
                 </configuration>
                 <executions>
@@ -110,12 +134,10 @@
                     </execution>
                 </executions>
             </plugin>
-
-            <!-- GPG sign JARs -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-gpg-plugin</artifactId>
-                <version>1.5</version>
+                <version>${maven.gpg-plugin.version}</version>
                 <executions>
                     <execution>
                         <id>sign-artifacts</id>
