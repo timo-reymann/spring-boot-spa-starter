@@ -40,13 +40,8 @@
         <java.version>8</java.version>
 
         <!-- Build Plugins -->
-        <maven.javadoc-plugin.version>3.1.1</maven.javadoc-plugin.version>
         <maven.gpg-plugin.version>1.6</maven.gpg-plugin.version>
-        <maven.source-plugin.version>3.1.0</maven.source-plugin.version>
         <nexus.staging-plugin.version>1.6.8</nexus.staging-plugin.version>
-
-        <!-- Dependency Versions -->
-        <lombok.version>1.18.10</lombok.version>
     </properties>
 
     <developers>
@@ -108,7 +103,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
-                <version>${maven.source-plugin.version}</version>
                 <executions>
                     <execution>
                         <id>attach-sources</id>
@@ -121,7 +115,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>${maven.javadoc-plugin.version}</version>
                 <configuration>
                     <source>8</source>
                 </configuration>
