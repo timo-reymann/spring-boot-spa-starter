@@ -1,5 +1,6 @@
 package com.github.timo_reymann.spring_boot_spa_starter.configuration;
 
+import com.github.timo_reymann.spring_boot_spa_starter.ConfigurationController;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.web.ResourceProperties;
 import org.springframework.context.annotation.Configuration;
