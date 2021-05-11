@@ -2,6 +2,7 @@ spring-boot-spa-starter
 ===
 [![Maven Central Version](https://maven-badges.herokuapp.com/maven-central/com.github.timo-reymann/spring-boot-spa-starter/badge.svg)](https://search.maven.org/search?q=g:com.github.timo-reymann%20AND%20a:spring-boot-spa-starter&core=gav)
 [![Build Status](https://travis-ci.org/timo-reymann/spring-boot-spa-starter.svg?branch=master)](https://travis-ci.org/timo-reymann/spring-boot-spa-starter)
+[![Dependabot](https://badgen.net/badge/Dependabot/enabled/green?icon=dependabot)](https://dependabot.com/)
 
 ## What is this?
 Simple, yet powerful starter for powering your single page application with an servlet backend, including an configuration endpoint.
