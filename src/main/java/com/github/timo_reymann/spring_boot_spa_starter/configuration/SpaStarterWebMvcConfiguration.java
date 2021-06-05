@@ -3,6 +3,7 @@ package com.github.timo_reymann.spring_boot_spa_starter.configuration;
 import com.github.timo_reymann.spring_boot_spa_starter.ConfigurationController;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.web.ResourceProperties;
+import org.springframework.boot.autoconfigure.web.WebProperties;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -22,10 +23,10 @@ import java.util.List;
 @Configuration("SpaStarterWebMvcConfiguration")
 @Slf4j
 public class SpaStarterWebMvcConfiguration implements WebMvcConfigurer {
-    private final ResourceProperties resourceProperties;
+    private final WebProperties.Resources resourceProperties;
     private final SpaStarterConfigurationProperties spaStarterConfigurationProperties;
 
-    public SpaStarterWebMvcConfiguration(ResourceProperties resourceProperties,
+    public SpaStarterWebMvcConfiguration(WebProperties.Resources resourceProperties,
                                          SpaStarterConfigurationProperties spaStarterConfigurationProperties) {
         this.resourceProperties = resourceProperties;
         this.spaStarterConfigurationProperties = spaStarterConfigurationProperties;

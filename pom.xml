@@ -6,12 +6,12 @@
 
     <groupId>com.github.timo-reymann</groupId>
     <artifactId>spring-boot-spa-starter</artifactId>
-    <version>1.5.0</version>
+    <version>1.6.0</version>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.1.RELEASE</version>
+        <version>2.5.0</version>
     </parent>
 
     <name>${artifactId}</name>
@@ -40,7 +40,7 @@
         <java.version>8</java.version>
 
         <!-- Build Plugins -->
-        <maven.gpg-plugin.version>1.6</maven.gpg-plugin.version>
+        <maven.gpg-plugin.version>3.0.1</maven.gpg-plugin.version>
         <nexus.staging-plugin.version>1.6.8</nexus.staging-plugin.version>
     </properties>
 

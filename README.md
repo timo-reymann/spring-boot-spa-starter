@@ -13,7 +13,7 @@ It adds
 - index.html rewriting for all non existing sources
 
 ## Requirements
-Spring Boot 2.1+
+Spring Boot 2.5+
 
 ### How to use?
 Simply add it to your dependencies
@@ -21,7 +21,7 @@ Simply add it to your dependencies
 <dependency>
     <groupId>com.github.timo-reymann</groupId>
     <artifactId>spring-boot-spa-starter</artifactId>
-    <version>1.5.0</version>
+    <version>1.6.0</version>
 </dependency>
 ```
 
